@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "sObjectApiName": "Lead",
+      "dataFileName": "leads/Lead.json"
+    },
+    {
+      "sObjectApiName": "Opportunity",
+      "dataFileName": "opportunities/Opportunity.json"
+    }
+  ]
+}

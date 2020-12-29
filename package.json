@@ -1,0 +1,66 @@
+{
+  "name": "sfdx-data-deploy-vscode",
+  "displayName": "sfdx-data-deploy-vscode",
+  "description": "Extension to deploy/retrieve data to/from Salesforce",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "salesforce",
+    "sfdx",
+    "deployment",
+    "data",
+    "records"
+  ],
+  "activationEvents": [
+    "onCommand:sfdx-data-deploy-vscode.deploy",
+    "onCommand:sfdx-data-deploy-vscode.retrieve"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sfdx-data-deploy-vscode.deploy",
+        "title": "SFDX: Deploy Data To Org"
+      },
+      {
+        "command": "sfdx-data-deploy-vscode.retrieve",
+        "title": "SFDX: Retrieve Data From Org"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sfdx-data-deploy-vscode.deploy",
+          "when": "workbenchState == folder || workbenchState == workspace"
+        },
+        {
+          "command": "sfdx-data-deploy-vscode.retrieve",
+          "when": "workbenchState == folder || workbenchState == workspace"
+        }
+      ]
+    }
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.52.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.15.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  }
+}

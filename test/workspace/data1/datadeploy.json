@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "sObjectApiName": "Account",
+      "dataFileName": "Account.json"
+    },
+    {
+      "sObjectApiName": "Contact",
+      "dataFileName": "Contact.json"
+    }
+  ]
+}
