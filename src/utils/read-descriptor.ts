@@ -6,7 +6,7 @@ export default async function readDescriptor(
 ): Promise<DeploymentDescriptor> {
   const descriptorPath = resolvePath(directory, 'datadeploy.json');
   try {
-    fs.access(descriptorPath, fsConstants.F_OK | fsConstants.R_OK);
+    await fs.access(descriptorPath, fsConstants.F_OK | fsConstants.R_OK);
   } catch (error) {
     throw new Error(
       `Deployment descriptor does not exist or is not accessible: ${descriptorPath}`
