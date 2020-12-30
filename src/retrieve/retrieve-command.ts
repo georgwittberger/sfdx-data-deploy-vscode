@@ -6,7 +6,7 @@ import selectDeployDirectory from '../utils/select-deploy-directory';
 export default async function retrieveCommand(
   deployDir?: string,
   include?: string[]
-) {
+): Promise<void> {
   const deployDirectory = deployDir || (await selectDeployDirectory())?.detail;
   if (!deployDirectory) {
     return;

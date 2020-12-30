@@ -18,7 +18,9 @@
   ],
   "activationEvents": [
     "onCommand:sfdx-data-deploy-vscode.deploy",
-    "onCommand:sfdx-data-deploy-vscode.retrieve"
+    "onCommand:sfdx-data-deploy-vscode.deployFolder",
+    "onCommand:sfdx-data-deploy-vscode.retrieve",
+    "onCommand:sfdx-data-deploy-vscode.retrieveFolder"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -28,8 +30,16 @@
         "title": "SFDX: Deploy Data To Org"
       },
       {
+        "command": "sfdx-data-deploy-vscode.deployFolder",
+        "title": "SFDX: Deploy Data From Folder To Org"
+      },
+      {
         "command": "sfdx-data-deploy-vscode.retrieve",
         "title": "SFDX: Retrieve Data From Org"
+      },
+      {
+        "command": "sfdx-data-deploy-vscode.retrieveFolder",
+        "title": "SFDX: Retrieve Data From Org To Folder"
       }
     ],
     "menus": {
@@ -39,8 +49,28 @@
           "when": "workbenchState == folder || workbenchState == workspace"
         },
         {
+          "command": "sfdx-data-deploy-vscode.deployFolder",
+          "when": "false"
+        },
+        {
           "command": "sfdx-data-deploy-vscode.retrieve",
           "when": "workbenchState == folder || workbenchState == workspace"
+        },
+        {
+          "command": "sfdx-data-deploy-vscode.retrieveFolder",
+          "when": "false"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "sfdx-data-deploy-vscode.deployFolder",
+          "when": "explorerResourceIsFolder",
+          "group": "sfdx-data-deploy-vscode@1"
+        },
+        {
+          "command": "sfdx-data-deploy-vscode.retrieveFolder",
+          "when": "explorerResourceIsFolder",
+          "group": "sfdx-data-deploy-vscode@2"
         }
       ]
     }
