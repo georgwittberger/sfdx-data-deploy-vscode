@@ -1,65 +1,66 @@
 # SFDX Data Deploy for Visual Studio Code
 
-This is the README for your extension "sfdx-data-deploy-vscode". After writing up a brief description, we recommend including the following sections.
+> Extension to deploy/retrieve data to/from Salesforce
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The extension adds support for the [SFDX Data Deploy Plugin](https://github.com/georgwittberger/sfdx-data-deploy-plugin).
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Deploy data files in workspace folders to Salesforce using the command palette.
+- Retrieve data files from Salesforce to workspace folders using the command palette.
+- Deploy data files in workspace folders to Salesforce using the explorer context menu.
+- Retrieve data files from Salesforce to workspace folders using the explorer context menu.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Install [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli).
+- Install [SFDX Data Deploy Plugin](https://github.com/georgwittberger/sfdx-data-deploy-plugin) (version 2.3.0 or higher)
+- Connect Salesforce CLI to your Salesforce Org and set it as default org (e.g. using `-s` with the `force:auth` command).
+- Open a workspace or folder in Visual Studio Code.
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Using the quick open menu (Ctrl+P / Cmd+P):
 
-For example:
+```
+ext install georgwittberger.sfdx-data-deploy-vscode
+```
 
-This extension contributes the following settings:
+## Usage
 
-- `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
+### Deploying from Data Files to Salesforce
 
-## Known Issues
+Using the command palette (Ctrl+Shift+P / Cmd+Shift+P):
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Open the command palette and type `sfdx data`.
+2. Select the command `SFDX: Deploy Data To Org`.
+3. Select the deployment directory from the displayed list.
+4. Select the data files to deploy from the displayed list or press Enter right away to deploy all files.
 
-## Release Notes
+Using the explorer context menu:
 
-Users appreciate release notes as you update your extension.
+1. Right-click on a deployment directory in the explorer view.
+2. Select `SFDX: Deploy Data From Folder To Org` from the context menu. This will deploy all data files in the folder.
 
-### 1.0.0
+### Retrieving from Salesforce to Data Files
 
-Initial release of ...
+Using the command palette (Ctrl+Shift+P / Cmd+Shift+P):
 
-### 1.0.1
+1. Open the command palette and type `sfdx data`.
+2. Select the command `SFDX: Retrieve Data From Org`.
+3. Select the deployment directory from the displayed list.
+4. Select the data files to retrieve from the displayed list or press Enter right away to retrieve all files.
 
-Fixed issue #.
+Using the explorer context menu:
 
-### 1.1.0
+1. Right-click on a deployment directory in the explorer view.
+2. Select `SFDX: Retrieve Data From Org To Folder` from the context menu. This will retrieve all data files in the folder.
 
-Added features X, Y, and Z.
+## Known Limitations
 
----
+- SFDX commands are always run against your default org. If you have connected Salesforce CLI to multiple orgs make sure that the right one is set as default org.
+- Explorer context menu items also appear for directories which do not contain any deployment descriptor. This is due to limitations of Visual Studio Code for controlling the visibility of menu items.
 
-## Working with Markdown
+## License
 
-**Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-- Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-- Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[MIT](https://opensource.org/licenses/MIT)
