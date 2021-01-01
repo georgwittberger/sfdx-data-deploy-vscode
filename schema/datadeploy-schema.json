@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://georgwittberger.github.io/sfdx-data-deploy-plugin/schema/datadeploy-schema.json",
+  "title": "SFDX Data Deploy Descriptor Specification",
+  "description": "Schema for the deployment descriptor of the SFDX Data Deploy Plugin",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "description": "Data deployment jobs to execute in sequence",
+      "items": {
+        "type": "object",
+        "description": "Data deployment job",
+        "properties": {
+          "sObjectApiName": {
+            "type": "string",
+            "description": "API name of the Salesforce object",
+            "minLength": 1
+          },
+          "dataFileName": {
+            "type": "string",
+            "description": "File system path of the data file relative to the deployment directory",
+            "minLength": 1
+          },
+          "deployConfig": {
+            "type": "object",
+            "description": "Deployment configuration",
+            "properties": {
+              "externalIdFieldApiName": {
+                "type": "string",
+                "description": "API name of the external ID field to use for UPSERT operation",
+                "minLength": 1
+              },
+              "maxWaitMinutes": {
+                "type": "integer",
+                "description": "Number of minutes to wait for the job to complete",
+                "minimum": 1,
+                "default": 5
+              },
+              "failOnError": {
+                "type": "boolean",
+                "description": "Fail deployment if an error occurs in the job",
+                "default": true
+              }
+            }
+          },
+          "retrieveConfig": {
+            "type": "object",
+            "description": "Retrieval configuration",
+            "properties": {
+              "includeFieldApiNames": {
+                "type": "array",
+                "description": "API names of the fields to include in data files",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "excludeFieldApiNames": {
+                "type": "array",
+                "description": "API names of the fields to exclude from data files",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "filterCriteria": {
+                "type": "object",
+                "description": "Filter criteria for records to retrieve",
+                "minProperties": 1,
+                "examples": [
+                  { "Name": "Umbrella Corp." },
+                  { "FirstName": { "$like": "John%" } },
+                  { "GrossValue": { "$gte": 1000 } },
+                  { "FirstName": "John", "LastName": "Doe" },
+                  { "FirstName": { "$in": ["Bob", "John"] } },
+                  { "$not": { "FirstName": { "$like": "John%" } } },
+                  {
+                    "$or": [
+                      { "Name": { "$like": "Test%" } },
+                      { "GrossValue": { "$lte": 500 } }
+                    ]
+                  }
+                ]
+              },
+              "sortFieldApiNames": {
+                "type": "array",
+                "description": "API names of the fields to sort records",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "maxRecordCount": {
+                "type": "integer",
+                "description": "Maximum number of records to retrieve",
+                "minimum": 1,
+                "default": 10000
+              }
+            }
+          }
+        },
+        "required": ["sObjectApiName", "dataFileName"]
+      }
+    }
+  },
+  "required": ["jobs"]
+}

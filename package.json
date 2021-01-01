@@ -80,7 +80,13 @@
           "group": "sfdx-data-deploy-vscode@2"
         }
       ]
-    }
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": "datadeploy.json",
+        "url": "./schema/datadeploy-schema.json"
+      }
+    ]
   },
   "extensionKind": [
     "workspace"
