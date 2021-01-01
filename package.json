@@ -86,6 +86,12 @@
         "fileMatch": "datadeploy.json",
         "url": "./schema/datadeploy-schema.json"
       }
+    ],
+    "snippets": [
+      {
+        "language": "json",
+        "path": "./snippets/datadeploy-snippets.json"
+      }
     ]
   },
   "extensionKind": [

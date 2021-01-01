@@ -1,0 +1,29 @@
+{
+  "SFDX Data Deploy Descriptor": {
+    "prefix": ["sfdx-datadeploy-descriptor"],
+    "description": "SFDX Data Deploy Descriptor",
+    "body": ["{", "\t\"jobs\": [", "\t\t$0", "\t]", "}"]
+  },
+  "SFDX Data Deploy Job": {
+    "prefix": ["sfdx-datadeploy-job"],
+    "description": "SFDX Data Deploy Job",
+    "body": [
+      "{",
+      "\t\"sObjectApiName\": \"${1:Account}\",",
+      "\t\"dataFileName\": \"${1:Account}.json\"$0",
+      "}"
+    ]
+  },
+  "SFDX Data Deploy Job Configuration": {
+    "prefix": ["sfdx-datadeploy-job-config"],
+    "description": "SFDX Data Deploy Job Configuration",
+    "body": [
+      "\"deployConfig\": {",
+      "\t$1",
+      "},",
+      "\"retrieveConfig\": {",
+      "\t$0",
+      "}"
+    ]
+  }
+}
