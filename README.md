@@ -6,6 +6,8 @@
 
 The extension adds support for the [SFDX Data Deploy Plugin](https://github.com/georgwittberger/sfdx-data-deploy-plugin).
 
+- Write deployment descriptor files with JSON validation and code completion.
+- Utilize code snippets for deployment descriptor files.
 - Deploy data files in workspace folders to Salesforce using the command palette.
 - Retrieve data files from Salesforce to workspace folders using the command palette.
 - Deploy data files in workspace folders to Salesforce using the explorer context menu.
@@ -27,6 +29,18 @@ ext install georgwittberger.sfdx-data-deploy-vscode
 ```
 
 ## Usage
+
+### Writing Deployment Descriptors
+
+Create a JSON file and type the word `sfdx` or `datadeploy` to view a list of code snippets.
+
+| Snippet                      | Description                                                        |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `sfdx-datadeploy-descriptor` | Scaffold of a deployment descriptor with a blank jobs list         |
+| `sfdx-datadeploy-job`        | Scaffold of a deployment job with placeholder for sObject name     |
+| `sfdx-datadeploy-job-config` | Scaffold of a deployment job configuration (use inside job object) |
+
+In the editor of a `datadeploy.json` file you will benefit from JSON validation and code completion. For example, press Ctrl+Space / Cmd+Space inside the job configuration objects to view a list of available configuration properties.
 
 ### Deploying from Data Files to Salesforce
 
