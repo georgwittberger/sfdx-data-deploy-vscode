@@ -16,8 +16,8 @@
    width="256"
    height="256"
    inkscape:export-filename="D:\georg\Projects\sfdx-data-deploy-vscode\icon.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96">
+   inkscape:export-xdpi="48"
+   inkscape:export-ydpi="48">
   <defs
      id="defs3">
     <linearGradient
@@ -350,7 +350,7 @@
      transform="translate(-285.87,-510.69)">
     <g
        id="g6097"
-       transform="matrix(4.1992,0,0,4.1992,-894.52246,-1613.754)">
+       transform="matrix(4.5257875,0,0,4.5257875,-1007.8815,-1800.5354)">
       <ellipse
          id="path6079"
          style="fill:#2e3436;filter:url(#filter6093)"
@@ -406,7 +406,7 @@
     </g>
     <g
        id="g184"
-       transform="matrix(3.5991362,0,0,3.5991362,365.26714,601.94057)">
+       transform="matrix(3.906983,0,0,3.906983,372.81247,604.6439)">
       <path
          id="path2865"
          style="color:#000000;display:block;fill:url(#linearGradient1486);stroke:url(#linearGradient1488)"
@@ -508,7 +508,7 @@
             <dc:title>Openclipart</dc:title>
           </cc:Agent>
         </dc:publisher>
-        <dc:title></dc:title>
+        <dc:title />
         <dc:date>2010-11-08T22:08:43</dc:date>
         <dc:description>database symbol in metallic style</dc:description>
         <dc:source>https://openclipart.org/detail/94723/database-symbol-by-rg1024</dc:source>

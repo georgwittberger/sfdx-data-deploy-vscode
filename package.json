@@ -2,7 +2,7 @@
   "name": "sfdx-data-deploy-vscode",
   "displayName": "SFDX Data Deploy for Visual Studio Code",
   "description": "Extension to deploy/retrieve data to/from Salesforce",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "Georg Wittberger <georg.wittberger@gmail.com>",
   "publisher": "georgwittberger",
