@@ -64,6 +64,11 @@
                 },
                 "minItems": 1
               },
+              "excludeSystemFields": {
+                "type": "boolean",
+                "description": "Exclude system fields from retrieved data. Requires plugin version 2.5.0",
+                "default": true
+              },
               "filterCriteria": {
                 "type": "object",
                 "description": "Filter criteria for records to retrieve",
